@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "postbuild": "next-on-netlify"
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
@@ -21,6 +21,7 @@
     "graphql": "^15.3.0",
     "graphql-tag": "^2.11.0",
     "next": "9.5.5",
+    "next-on-netlify": "^2.5.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "^6.1.0",

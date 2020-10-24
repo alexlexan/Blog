@@ -16,6 +16,9 @@ const Code = ({ children }) => (
 );
 
 function Post({ post, blogName, avatar, setThemeDark, themeDark }) {
+  if (!post) {
+    return null;
+  }
   const router = useRouter();
   if (router.isFallback) {
     return (
@@ -82,7 +85,7 @@ function Post({ post, blogName, avatar, setThemeDark, themeDark }) {
 //   return { props: { post: { ...post, publishDate }, blogName, avatar, title } };
 // }
 
-async function getStaticProps({ params }) {
+export async function getStaticProps({ params }) {
   const variables = { id: params.id };
   const res = await getContentForHomePage(ONE_POST_QUERY, variables);
 
@@ -94,7 +97,7 @@ async function getStaticProps({ params }) {
   return { props: { post: { ...post, publishDate }, blogName, avatar, title } };
 }
 
-async function getStaticPaths() {
+export async function getStaticPaths() {
   return {
     paths: [],
     fallback: true,
