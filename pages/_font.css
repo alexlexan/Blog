@@ -1,0 +1,27 @@
+@font-face {
+  font-display: swap;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/files/merriweather-v22-latin_cyrillic-regular.woff2)
+    format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900;
+  src: url(../fonts/files/montserrat-900-c-ext.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/files/merriweather-v22-latin_cyrillic-700.woff2)
+    format("woff2");
+}
