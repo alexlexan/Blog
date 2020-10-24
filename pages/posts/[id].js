@@ -82,7 +82,7 @@ function Post({ post, blogName, avatar, setThemeDark, themeDark }) {
 //   return { props: { post: { ...post, publishDate }, blogName, avatar, title } };
 // }
 
-export async function getStaticProps({ params }) {
+async function getStaticProps({ params }) {
   const variables = { id: params.id };
   const res = await getContentForHomePage(ONE_POST_QUERY, variables);
 
@@ -94,7 +94,7 @@ export async function getStaticProps({ params }) {
   return { props: { post: { ...post, publishDate }, blogName, avatar, title } };
 }
 
-export async function getStaticPaths() {
+async function getStaticPaths() {
   return {
     paths: [],
     fallback: true,
