@@ -24,8 +24,47 @@ export default styled.div`
 `;
 
 export const Article = styled.div`
+  h2,
+  h3 {
+    font-family: "Merriweather", "Georgia", serif;
+    margin-bottom: 1.75rem;
+    margin-top: 3rem;
+    text-rendering: optimizeLegibility;
+    font-size: 1.7rem;
+    line-height: 1.1;
+  }
   p b {
     font-weight: 700;
+  }
+  ul {
+    list-style: disc;
+    margin-bottom: 1rem;
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+  blockquote {
+    margin-left: -1.75rem;
+    margin-right: 1.75rem;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 1.42188rem;
+    padding-right: 0;
+    padding-top: 0;
+    margin-bottom: 1.75rem;
+    font-size: 1.20112rem;
+    line-height: 1.75rem;
+    color: inherit;
+    font-style: italic;
+    border-left: 0.32813rem solid hsla(0, 0%, 0%, 0.9);
+    border-left-color: inherit;
+    opacity: 0.8;
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+  blockquote p:last-child {
+    margin-bottom: 0;
   }
   .prismjs {
     background: #011627;

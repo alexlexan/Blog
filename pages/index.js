@@ -32,6 +32,7 @@ export async function getStaticProps() {
   const avatar = res.avatarUrl;
   return {
     props: { title, previewPosts, avatar },
+    revalidate: 60
   };
 }
 

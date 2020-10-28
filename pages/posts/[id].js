@@ -1,5 +1,5 @@
 import { MARKS, BLOCKS } from "@contentful/rich-text-types";
-import { ONE_POST_QUERY } from "../../utils/query";
+import { ONE_POST_QUERY, BLOG_ARCTICLE_PATH_QUERY } from "../../utils/query";
 import { getContentForHomePage } from "../../utils/query";
 import { formatPostDate, formatReadingTime } from "../../utils/helpers";
 import Container, { Title, Links, Article } from "./styles";
@@ -16,14 +16,11 @@ const Code = ({ children }) => (
 );
 
 function Post({ post, blogName, avatar, setThemeDark, themeDark }) {
-  if (!post) {
-    return null;
-  }
   const router = useRouter();
   if (router.isFallback) {
     return (
       <main>
-        <p>New comparison! Loading...</p>
+        <p>Загрузка...</p>
       </main>
     );
   }
@@ -75,16 +72,6 @@ function Post({ post, blogName, avatar, setThemeDark, themeDark }) {
   );
 }
 
-// export async function getServerSideProps({ query }) {
-//   const variables = { id: query.id };
-//   const res = await getContentForHomePage(ONE_POST_QUERY, variables);
-//   const { blogPost: post, avatarUrl: avatar } = res;
-//   const blogName = res.blogName.title;
-//   const title = post.title;
-//   const publishDate = formatPostDate(post.publishDate);
-//   return { props: { post: { ...post, publishDate }, blogName, avatar, title } };
-// }
-
 export async function getStaticProps({ params }) {
   const variables = { id: params.id };
   const res = await getContentForHomePage(ONE_POST_QUERY, variables);
@@ -94,12 +81,20 @@ export async function getStaticProps({ params }) {
   const title = post.title;
   const publishDate = formatPostDate(post.publishDate);
 
-  return { props: { post: { ...post, publishDate }, blogName, avatar, title } };
+  return {
+    props: { post: { ...post, publishDate }, blogName, avatar, title },
+    revalidate: 60,
+  };
 }
 
 export async function getStaticPaths() {
+  const res = await getContentForHomePage(BLOG_ARCTICLE_PATH_QUERY);
+
+  const paths = res.blogPostCollection.items.map((post) => {
+    return { params: { id: `${post.sys.id}` } };
+  });
   return {
-    paths: [],
+    paths,
     fallback: true,
   };
 }
