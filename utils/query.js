@@ -33,6 +33,17 @@ export const ONE_POST_QUERY = gql`
       readingTime
       article {
         json
+        links {
+          assets {
+            block {
+              sys {
+                id
+              }
+              fileName
+              url
+            }
+          }
+        }
       }
       listUrl {
         json

@@ -32,6 +32,13 @@ function Post({ post, blogName, avatar, setThemeDark, themeDark }) {
     article: postArticle,
     listUrl,
   } = post;
+
+  const searchImg = (id) => {
+    const images = postArticle.links.assets.block;
+    const image = images.find((item) => item.sys.id === id);
+    return image.url;
+  };
+
   const options = {
     renderMark: {
       [MARKS.CODE]: (text) => <Code>{text}</Code>,
@@ -42,6 +49,14 @@ function Post({ post, blogName, avatar, setThemeDark, themeDark }) {
           return <div className="code">{children}</div>;
         }
         return <p>{children}</p>;
+      },
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const url = searchImg(node.data.target.sys.id);
+        return (
+          <div className="image-article">
+            <img src={`${url}`} />
+          </div>
+        );
       },
     },
   };

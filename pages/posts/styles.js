@@ -75,6 +75,7 @@ export const Article = styled.div`
     margin-left: -1.3125rem;
     code {
       text-shadow: none !important;
+      white-space: break-spaces !important;
       span {
         color: #fff;
       }
@@ -125,6 +126,15 @@ export const Article = styled.div`
     font-size: 1rem;
     font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New,
       monospace;
+  }
+
+  .image-article {
+    width: 100%;
+    margin-right: -1.3125rem;
+    margin-left: -1.3125rem;
+    img {
+      width: 100%;
+    }
   }
 `;
 

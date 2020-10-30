@@ -7,17 +7,13 @@ export default class SiteDocument extends Document {
     const originalRenderPage = ctx.renderPage;
 
     try {
-      // wraps the collectStyles provider around our <App />.
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (App) => (props) =>
             sheet.collectStyles(<App {...props} />),
         });
 
-      // extract the initial props that may be present.
       const initialProps = await Document.getInitialProps(ctx);
-
-      // returning the original props together with our styled components.
       return {
         ...initialProps,
         styles: (
