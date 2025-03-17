@@ -1,0 +1,102 @@
+{
+    "version": "0.0.2",
+    "defaultConnectionId": "preset_hmstr_mainnet_proto",
+    "networks": [
+        {
+            "id": 30,
+            "network": "everscale",
+            "name": "Everscale",
+            "group": "mainnet",
+            "type": "jrpc",
+            "data": {
+                "endpoint": "https://jrpc.everwallet.net"
+            },
+            "config": {
+                "symbol": "EVER",
+                "explorerBaseUrl": "https://everscan.io",
+                "tokensManifestUrl": "https://raw.githubusercontent.com/broxus/ton-assets/master/manifest.json",
+                "decimals": 9
+            }
+        },
+        {
+            "id": 40,
+            "network": "venom",
+            "name": "Venom",
+            "group": "mainnet-venom",
+            "type": "proto",
+            "data": {
+                "endpoint": "https://jrpc.venom.foundation"
+            },
+            "config": {
+                "symbol": "VENOM",
+                "explorerBaseUrl": "https://venomscan.com",
+                "tokensManifestUrl": "https://cdn.venom.foundation/assets/mainnet/manifest.json",
+                "decimals": 9
+            }
+        },
+        {
+            "id": 20,
+            "network": "tycho",
+            "name": "Tycho Testnet",
+            "group": "testnet-tycho",
+            "type": "proto",
+            "data": {
+                "endpoint": "https://rpc-testnet.tychoprotocol.com/proto"
+            },
+            "config": {
+                "explorerBaseUrl": "https://testnet.tychoprotocol.com",
+                "tokensManifestUrl": "https://raw.githubusercontent.com/broxus/ton-assets/refs/heads/tychotestnet/manifest.json",
+                "symbol": "TYCHO",
+                "decimals": 9
+            }
+        },
+        {
+            "id": 0,
+            "network": "ton",
+            "name": "TON",
+            "group": "ton",
+            "type": "jrpc",
+            "data": {
+                "endpoint": "https://jrpc-ton.broxus.com"
+            },
+            "config": {
+                "explorerBaseUrl": "https://tonviewer.com",
+                "tokensManifestUrl": "https://raw.githubusercontent.com/broxus/ton-assets/refs/heads/ton-prod/manifest.json",
+                "symbol": "TON",
+                "decimals": 9
+            }
+        },
+        {
+            "id": 10,
+            "network": "hamster",
+            "name": "Hamster Network",
+            "group": "hamster",
+            "type": "proto",
+            "data": {
+                "endpoint": "https://rpc.hamster.network"
+            },
+            "config": {
+                "explorerBaseUrl": "https://hamsterscan.io",
+                "tokensManifestUrl": "https://raw.githubusercontent.com/broxus/ton-assets/refs/heads/hmstr/manifest.json",
+                "symbol": "HMSTR",
+                "decimals": 9
+            }
+        },
+        {
+            "id": 50,
+            "network": "humo",
+            "name": "Humo",
+            "group": "humo",
+            "type": "proto",
+            "data": {
+                "endpoint": "https://rpc.humonetwork.com"
+            },
+            "config": {
+                "explorerBaseUrl": "https://humoscan.com/",
+                "symbol": "HUMO",
+                "decimals": 9
+            }
+        }
+    ],
+    "transports": []
+}
