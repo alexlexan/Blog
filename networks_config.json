@@ -1,11 +1,11 @@
 {
-    "version": "0.0.3",
+    "version": "0.0.4",
     "defaultConnectionId": "preset_hmstr_mainnet_proto",
     "networks": [
         {
             "id": 30,
             "network": "everscale",
-            "name": "Everscale1",
+            "name": "Everscale",
             "group": "mainnet",
             "type": "jrpc",
             "data": {
