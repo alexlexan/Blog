@@ -1,5 +1,4 @@
 {
-    "$schema": "./networks_config.schema.json",
     "defaultConnectionId": "preset_ever_mainnet_proto",
     "networks": [
         {
